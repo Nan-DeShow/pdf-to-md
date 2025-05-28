@@ -2,6 +2,7 @@ import os
 import zipfile
 from markitdown import MarkItDown
 
+## gets a list of files in the 'files' directory
 def get_files_in_directory(directory_path):
   """
   Returns a list of files in the specified directory.
@@ -20,6 +21,7 @@ def get_files_in_directory(directory_path):
   except NotADirectoryError:
     return f"Error: Not a directory: {directory_path}"
 
+## unzips any zip files in the 'files' directory
 def unzip_file(zip_filepath, extract_to_path):
     """
     Extracts all files from a ZIP archive.
@@ -38,6 +40,7 @@ def unzip_file(zip_filepath, extract_to_path):
     except zipfile.BadZipFile:
          print(f"Error: The file '{zip_filepath}' is not a valid ZIP file.")
 
+## Converts a PDF file to Markdown format
 def convert_to_md (file):
     details = file.split('.')
     name = details[0]
@@ -58,7 +61,7 @@ def convert_to_md (file):
     f.write(result.text_content)
     f.close()
 
-
+## Main execution
 directory_path = "./files"
 
 file_list = get_files_in_directory(directory_path)
