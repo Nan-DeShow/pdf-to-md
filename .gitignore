@@ -1,0 +1,5 @@
+.venv
+files/*.pdf
+files/*.zip
+markdown_files/*.md
+unzipped_pdfs/*.pdf
