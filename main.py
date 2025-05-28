@@ -122,7 +122,7 @@ async def main():
                 print(f"- {file_name}")
                 message = convert_to_md(file_name)
                 test_message = {"message": message}
-                await nc.publish("example.topic", test_message["message"].encode())
+                ## await nc.publish("example.topic", test_message["message"].encode())
                 print(f"Published message: {test_message['message']}")
                 await asyncio.sleep(1)
 
